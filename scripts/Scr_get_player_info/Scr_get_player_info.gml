@@ -1,0 +1,1 @@
+function Scr_get_player_info() {};
