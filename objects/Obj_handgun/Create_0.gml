@@ -29,6 +29,6 @@ Final_accuracy = 0 //final accuracy, after calculations
 Critical_threshold = 900 //number to hit or beat on a crit roll to hit a critical
 Critical_multiplier = 2.5 //multiple of damage a critical hit will deal
 Stun_threshold = 667 //number to hit or beat on a stun roll to hit a stun
-Stun_duration = 60 //frames to stun target for if stun roll is a success
+Stun_duration = 360 //frames to stun target for if stun roll is a success
 
 instance_create_depth(Obj_handgun.x, Obj_handgun.y, 0, Obj_crosshair)

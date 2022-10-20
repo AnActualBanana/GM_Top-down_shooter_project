@@ -3,10 +3,7 @@ function setActiveAnimation(setAnimation) {
     sprite_index = asset_get_index(string(animation_name))
     attack_cooldown_timer = animationData[setAnimation][1]
     image_speed = animationData[setAnimation][2]
-    show_debug_message("")
-    show_debug_message("")
-    show_debug_message("Animation ID set to the value of " + string(setAnimation) + " - Did I break here? - setActiveAnimation")
-    show_debug_message("Sprite_index set to " + string(animation_name) + " - Did I break here? - setActiveAnimation")
+	show_debug_message("setActiveAnimation given the value of: " + string(setAnimation))
 }
 
 function getDirection(Object) {
