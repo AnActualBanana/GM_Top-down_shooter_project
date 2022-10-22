@@ -1,5 +1,6 @@
 /// @description Stun_timer alarm
 image_speed = 1;
+
 speed = 0.75;
 Enemy_state = Enemy_state.idle;
 

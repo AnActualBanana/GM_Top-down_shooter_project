@@ -23,7 +23,7 @@ if stun_timer > 0 and Enemy_state != Enemy_state.stunned {
 	show_debug_message("Alarm set, stun_timer active and alarm declared " + string(alarm[0]))
 }
 
-if Enemy_state = Enemy_state.stunned and image_index >= 1 and image_index < 2 {
+if Enemy_state = Enemy_state.stunned and image_index >= 2 and image_index < 3 {
 	image_speed = 0;
 }
 
@@ -44,7 +44,7 @@ if distance_to_object(Obj_player) < 250 and distance_to_object(Obj_player) > 20 
 }
 
 //pursuing state issue movement animations
-if Enemy_state = Enemy_state.pursuing and Enemy_state != Enemy_state.stunned {
+if Enemy_state = Enemy_state.pursuing and stun_timer = 0 {
     direction = point_direction(x, y, Obj_player.x, Obj_player.y);
     setActiveAnimation(0)
 }

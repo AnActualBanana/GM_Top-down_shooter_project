@@ -62,6 +62,6 @@ image_yscale = 1.5;
 
 animationData = [
     //Player Animation Data
-    ["Spr_chad_walk_anim", 0, 1],
+    ["Spr_chad_walk", 0, 1],
 	["Spr_chad_idle", 0, 1]
 ];
