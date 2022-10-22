@@ -16,14 +16,14 @@ if attack_cooldown_timer > 0 {
 }
 
 if stun_timer > 0 and Enemy_state != Enemy_state.stunned {
-	Enemy_state = Enemy_state.stunned;
 	alarm[0] = stun_timer;
+	Enemy_state = Enemy_state.stunned;
 	speed = 0;
 	setActiveAnimation(3);
 	show_debug_message("Alarm set, stun_timer active and alarm declared " + string(alarm[0]))
 }
 
-if Enemy_state = Enemy_state.stunned and image_index >= 1 and image_index < 2 {
+if Enemy_state = Enemy_state.stunned and image_index = 2 {
 	image_speed = 0;
 }
 
@@ -33,9 +33,8 @@ if attack_cooldown_timer > 0 and Enemy_state != Enemy_state.attack_cooldown and 
 	show_debug_message("Alarm set, attack_cooldown_timer active and alarm declared " + string(alarm[1]))
 }
 
-if distance_to_object(Obj_player) < 250 and distance_to_object(Obj_player) > 20 and Enemy_state != Enemy_state.stunned {
+if distance_to_object(Obj_player) < 250 and distance_to_object(Obj_player) > 20 and Enemy_state != Enemy_state.attacking and Enemy_state != Enemy_state.attack_cooldown and Enemy_state != Enemy_state.stunned {
         Enemy_state = Enemy_state.pursuing;
-		speed = 0
         if sprinting = 1.0 {
             speed = 1.75
         } else { 
@@ -44,7 +43,7 @@ if distance_to_object(Obj_player) < 250 and distance_to_object(Obj_player) > 20 
 }
 
 //pursuing state issue movement animations
-if Enemy_state = Enemy_state.pursuing and Enemy_state != Enemy_state.stunned {
+if Enemy_state = Enemy_state.pursuing {
     direction = point_direction(x, y, Obj_player.x, Obj_player.y);
     setActiveAnimation(0)
 }
