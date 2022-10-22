@@ -172,6 +172,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Attack","folderPath":"folders/Sprites/Enemies, players, npcs/Enemies/Enemie Animations/Attack.yy","order":1,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Idle","folderPath":"folders/Sprites/Enemies, players, npcs/Enemies/Enemie Animations/Idle.yy","order":2,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Movement","folderPath":"folders/Sprites/Enemies, players, npcs/Enemies/Enemie Animations/Movement.yy","order":3,},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Stun","folderPath":"folders/Sprites/Enemies, players, npcs/Enemies/Enemie Animations/Stun.yy","order":4,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Players","folderPath":"folders/Sprites/Enemies, players, npcs/Players.yy","order":5,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Idle","folderPath":"folders/Sprites/Enemies, players, npcs/Players/Idle.yy","order":1,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Movement","folderPath":"folders/Sprites/Enemies, players, npcs/Players/Movement.yy","order":2,},
@@ -183,7 +184,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Weapons, items, misc.","folderPath":"folders/Sprites/Weapons, items, misc..yy","order":2,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy","order":2,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy","order":8,},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Stun","folderPath":"folders/Sprites/Enemies, players, npcs/Enemies/Enemie Animations/Stun.yy","order":4,},
   ],
   "AudioGroups": [
     {"resourceType":"GMAudioGroup","resourceVersion":"1.3","name":"audiogroup_default","targets":-1,},
