@@ -20,7 +20,6 @@ if stun_timer > 0 and Enemy_state != Enemy_state.stunned {
 	alarm[0] = stun_timer;
 	speed = 0;
 	setActiveAnimation(3);
-	show_debug_message("Alarm set, stun_timer active and alarm declared " + string(alarm[0]))
 }
 
 if Enemy_state = Enemy_state.stunned and image_index >= 2 and image_index < 3 {
@@ -33,9 +32,8 @@ if attack_cooldown_timer > 0 and Enemy_state != Enemy_state.attack_cooldown and 
 	show_debug_message("Alarm set, attack_cooldown_timer active and alarm declared " + string(alarm[1]))
 }
 
-if distance_to_object(Obj_player) < 250 and distance_to_object(Obj_player) > 20 and Enemy_state != Enemy_state.stunned {
+if distance_to_object(Obj_player) < 250 and distance_to_object(Obj_player) > 20 and Enemy_state != Enemy_state.stunned and Enemy_state != Enemy_state.attack_cooldown and canAttack = true {
         Enemy_state = Enemy_state.pursuing;
-		speed = 0
         if sprinting = 1.0 {
             speed = 1.75
         } else { 
@@ -44,12 +42,12 @@ if distance_to_object(Obj_player) < 250 and distance_to_object(Obj_player) > 20 
 }
 
 //pursuing state issue movement animations
-if Enemy_state = Enemy_state.pursuing and stun_timer = 0 {
+if Enemy_state = Enemy_state.pursuing {
     direction = point_direction(x, y, Obj_player.x, Obj_player.y);
     setActiveAnimation(0)
 }
 
-if distance_to_object(Obj_player) <= 20 and Enemy_state != Enemy_state.attack_cooldown and Enemy_state != Enemy_state.stunned and Enemy_state != Enemy_state.attacking and canAttack = true {
+if distance_to_object(Obj_player) <= 25 and Enemy_state != Enemy_state.attack_cooldown and Enemy_state != Enemy_state.stunned and Enemy_state != Enemy_state.attacking and canAttack = true {
 	Enemy_state = Enemy_state.attacking;
 	direction = point_direction(x, y, Obj_player.x, Obj_player.y);
 	setActiveAnimation(2);
@@ -57,10 +55,9 @@ if distance_to_object(Obj_player) <= 20 and Enemy_state != Enemy_state.attack_co
 }
 
 if Enemy_state = Enemy_state.attacking {
-	if point_distance(self.x, self.y, Obj_player.x, Obj_player.y) < 60
+	if point_distance(self.x, self.y, Obj_player.x, Obj_player.y) < 50
 		Obj_player.Current_health -= round(random_range(5, 8));
 		canAttack = false;
-		Enemy_state = Enemy_state.pursuing;
 }
 
 //kills enemy if hp is 0, then does death process

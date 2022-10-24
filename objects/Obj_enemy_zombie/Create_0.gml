@@ -32,8 +32,11 @@ Enemy_state = Enemy_state.idle;
 
 animationData = [
     //Enemy Animation Data
-    ["Spr_basic_movement", 0, 1, 0.75],
+    ["Spr_basic_movement", 0, 1],
     ["Spr_basic_idle", 0, 1, 0],
-    ["Spr_basic_zombie_attack", 180, 1, 0],
-	["Spr_basic_enemy_stun", 0, 2, 0]
+    ["Spr_basic_zombie_attack", 90, 1],
+	["Spr_basic_enemy_stun", 0, 1]
 ];
+
+//Future array for holding drop data, can be 2d, or whatever is needed.
+lootData[0] = [0, 0, 0, 0, 0, 0, 0, 0, 0]
