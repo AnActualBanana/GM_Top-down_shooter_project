@@ -5,5 +5,3 @@ Enemy_state = Enemy_state.idle;
 
 show_debug_message("Alarm[0] Triggering confirmation message. Alarm initiated, state restored.")
 
-
-
