@@ -32,7 +32,7 @@ if attack_cooldown_timer > 0 and Enemy_state != Enemy_state.attack_cooldown and 
 	show_debug_message("Alarm set, attack_cooldown_timer active and alarm declared " + string(alarm[1]))
 }
 
-if distance_to_object(Obj_player) < 250 and distance_to_object(Obj_player) > 20 and Enemy_state != Enemy_state.stunned and Enemy_state != Enemy_state.attack_cooldown and canAttack = true {
+if distance_to_object(Obj_player) < 250 and distance_to_object(Obj_player) > 20 and Enemy_state != Enemy_state.stunned and Enemy_state != Enemy_state.attacking {
         Enemy_state = Enemy_state.pursuing;
         if sprinting = 1.0 {
             speed = 1.75
