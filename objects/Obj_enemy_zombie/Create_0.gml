@@ -40,11 +40,3 @@ animationData = [
 
 //Future array for holding drop data, can be 2d, or whatever is needed.
 lootData[0] = [0, 0, 0, 0, 0, 0, 0, 0, 0]
-
-projectileData = [
-[],
-[],
-[],
-[],
-[],
-];
