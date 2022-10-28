@@ -16,7 +16,6 @@ if instance_exists(Obj_game_manager) {
 }
 //next wave
 if Next_wave == true && instance_exists(Obj_player){
-	show_debug_message("next wave trig")
 Obj_game_manager.Game_state = Game_state.in_round;
 Obj_player.Player_state = Player_state.idle;
 Obj_player.Player_equipped_weapon = Player_equipped_weapon.handgun;
