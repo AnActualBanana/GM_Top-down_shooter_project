@@ -7,7 +7,7 @@ switch (Player_state) {
 	case Player_state.walking: Scr_player_state_walking(); break;
 	case Player_state.sprinting: Scr_player_state_sprinting(); break;
 	case Player_state.crouched: Scr_player_state_crouched(); break;
-	case Player_state.in_menu: show_debug_message("test"); Scr_player_state_in_menu(); break;
+	case Player_state.in_menu: Scr_player_state_in_menu(); break;
 }
 //checks for currently equipped weapon, then runs corresponding script
 switch (Player_equipped_weapon) {
