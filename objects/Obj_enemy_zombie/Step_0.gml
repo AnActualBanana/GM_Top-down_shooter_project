@@ -6,6 +6,15 @@
 	case Enemy_state.attacking: enemy_zombie_idle(self); break;
 	case Enemy_state.wandering: enemy_zombie_wandering(self); break;
 }*/
+if global.enemies_alive <= 4 and lastAlive = false {
+	lastAlive = true;
+}
+
+if lastAlive = true and pursueIgnoreDistanceChecks(){
+	speed = 1.75;
+	Enemy_state = Enemy_state.pursuing
+}
+
 if stun_timer > 0 {
 	stun_timer -= 1
 }
@@ -41,11 +50,11 @@ if canPursue() {
 
 //pursuing state issue movement animations
 if Enemy_state = Enemy_state.pursuing {
-	if sprinting = 1.0 {
-		speed = 1.75
-    } else { 
-        speed = 0.75
-    }
+	if sprinting = 1.0 and lastAlive = false {
+		speed = 1.75;
+	} else if sprinting != 1.0 and lastAlive = false {
+		speed = 0.75;
+	}
     direction = point_direction(x, y, Obj_player.x, Obj_player.y);
     setActiveAnimation(0)
 }
@@ -64,13 +73,17 @@ if Enemy_state = Enemy_state.attacking {
 }
 
 //kills enemy if hp is 0, then does death process
-if hp <= 0 {dead = true};
+if hp <= 0 {
+	dead = true
+}
 
 //death process
 if dead = true {
     //loot drop
     randomize();
-    drop_roll = round(random_range(0, 999));
+    drop_roll = round(random_range(0, 1000));
     loot_drop(self.id, drop_roll, global.wave);
+	global.enemies_alive -= 1;
     instance_destroy(self);
-    };
+	show_debug_message("Number of enemies alive after death event called: "+ string(global.enemies_alive))
+}

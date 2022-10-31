@@ -15,6 +15,18 @@ switch (Player_equipped_weapon) {
 	case Player_equipped_weapon.menu: break;
 }
 //points sprite at mouse
+if (Player_state = Player_state.walking || Player_state = Player_state.sprinting) {
+	setActiveAnimation(0)
+}
+
+if (Player_state = Player_state.idle and image_index = 0) {
+	var randomIdleAnimation = round(random_range(0, 100));
+	if randomIdleAnimation >= 2 {
+	setActiveAnimation(1)
+	} else {
+	setActiveAnimation(2)
+	}
+}
 dir = point_direction(x, y, mouse_x, mouse_y);
 
 if Current_score >= global.highest_score {global.highest_score = Current_score} //high score

@@ -19,6 +19,7 @@ relocate_timer = 180;
 canAttack = true;
 attacked = false;
 target = Obj_player;
+lastAlive = false;
 
 enum Enemy_state {
 	idle,
@@ -33,12 +34,14 @@ enum Enemy_state {
 Enemy_state = Enemy_state.idle;
 
 animationData = [
-    //Enemy Animation Data
     ["Spr_basic_movement", 0, 1],
     ["Spr_basic_idle", 0, 1, 0],
-    ["Spr_basic_zombie_attack", 60, 1],
+    ["Spr_basic_zombie_attack", 90, 1],
 	["Spr_basic_enemy_stun", 0, 1]
 ];
 
-//Future array for holding drop data, can be 2d, or whatever is needed.
-lootData[0] = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+//Can add additional data later if needed.
+lootData = [
+	[Obj_handgun_ammo_drop],
+	[Obj_health_pack_small_drop]
+];

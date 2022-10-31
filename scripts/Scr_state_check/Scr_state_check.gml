@@ -12,15 +12,15 @@ all distance checks. It only checks for the stunned, attacking, or attack_cooldo
 */
 function canPursue(){
 	if (attacked = true) {
-		return pursueIgnoreDistanceCheck();
+		return pursueIgnoreDistanceChecks();
 	} else
 	return pursuingChecks();
 }
 /*Ignores the distance check called by pursuingChecks(), only checks the states,
 the proceeds to grab the location of the player and pursues. Will only stop if the player
 breaks the detection range of the zombie again.*/
-function pursueIgnoreDistanceCheck(){
-	return Enemy_state != Enemy_state.stunned and Enemy_state != Enemy_state.attacking and Enemy_state != Enemy_state.attack_cooldown;
+function pursueIgnoreDistanceChecks(){
+	return Enemy_state != Enemy_state.pursuing and Enemy_state != Enemy_state.stunned and Enemy_state != Enemy_state.attacking and Enemy_state != Enemy_state.attack_cooldown;
 }
 /*Checks for applying the stunned state.*/
 function isStunned(){
@@ -28,7 +28,7 @@ function isStunned(){
 }
 /*Checks for applying the pursuing state. Also handles the distance check here.*/
 function pursuingChecks(){
-	return distance_to_object(target) < 150 and distance_to_object(target) > 20 and Enemy_state != Enemy_state.stunned and Enemy_state != Enemy_state.attacking and Enemy_state != Enemy_state.attack_cooldown;
+	return distance_to_object(target) < 150 and distance_to_object(target) > 20 and Enemy_state != Enemy_state.pursuing and Enemy_state != Enemy_state.stunned and Enemy_state != Enemy_state.attacking and Enemy_state != Enemy_state.attack_cooldown;
 }
 /*Distance check to apply the attacking state.*/
 function withinAttackDistance(){

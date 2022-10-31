@@ -1,4 +1,4 @@
-/// @Destroy Event after opening
+/// @description Destroy Event after pickup
 instance_destroy(self);
 
 
