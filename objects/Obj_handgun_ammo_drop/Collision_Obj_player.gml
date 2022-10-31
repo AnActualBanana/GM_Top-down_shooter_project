@@ -1,6 +1,8 @@
 /// @description (Pickup)
-// You can write your code in this editor
-
-Obj_handgun.Reserve_ammo += Ammo_value; //adds ammo
-instance_destroy(self); //despawns self
+alarm[0] = 28;
+if (alreadyTaken = false){
+	Obj_handgun.Reserve_ammo += Ammo_value; //adds ammo
+	image_speed = 1;
+	alreadyTaken = true;
+}
 

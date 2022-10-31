@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "Obj_crosshair",
   "spriteId": {
-    "name": "Spr_crosshair",
-    "path": "sprites/Spr_crosshair/Spr_crosshair.yy",
+    "name": "Cursor_test",
+    "path": "sprites/Cursor_test/Cursor_test.yy",
   },
   "solid": false,
   "visible": true,
