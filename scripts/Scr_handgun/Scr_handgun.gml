@@ -73,14 +73,14 @@ repeat (iterations) {
     }
 } 
 //creates muzzle flash and bullet casing objects, sets casing object to appropriate image
-instance_create_layer(Obj_gun.x, Obj_gun.y, "Instances_1", Obj_muzzle_flare);
-instance_create_layer(Obj_gun.x, Obj_gun.y, "gun_front", Obj_gunfire_tracer);    //why isn't this displaying?
+instance_create_layer(Obj_handgun.x, Obj_handgun.y, "Instances_1", Obj_muzzle_flare);
+instance_create_layer(Obj_handgun.x, Obj_handgun.y, "gun_front", Obj_gunfire_tracer);    //why isn't this displaying?
 {
-Obj_gunfire_tracer.image_angle = point_direction(Obj_gun.x, Obj_gun.y, aimed_y, aimed_x); 
+Obj_gunfire_tracer.image_angle = point_direction(Obj_handgun.x, Obj_handgun.y, aimed_y, aimed_x); 
 Obj_gunfire_tracer.image_yscale = 100;
 Obj_gunfire_tracer.image_xscale = 100;
 }
-with instance_create_layer(Obj_gun.x, Obj_gun.y, "gun_front", Obj_bullet_casing)
+with instance_create_layer(Obj_handgun.x, Obj_handgun.y, "gun_front", Obj_bullet_casing)
 {Obj_bullet_casing.image_index = 2; Obj_bullet_casing.image_speed = 0};
 
 //recoil calculation, adds recoil to gun, according to gun's recoil stats
@@ -120,6 +120,7 @@ var final_dmg = dmg;
 //check for valid target, do damage and sound
 target.hp = target.hp - (final_dmg)
 	target.stun_timer = Stun_duration;
+	target.attacked = true;
 instance_create_layer(contact_x, contact_y, "gun_front", Obj_blood_mist);
 audio_sound_pitch(Snd_bullet_impact, random_range(0.9, 1.1));
 audio_sound_gain(Snd_bullet_impact, random_range(1, 2), 1);
