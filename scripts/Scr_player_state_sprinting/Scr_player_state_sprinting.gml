@@ -33,4 +33,5 @@ Obj_player.State = 3
 Obj_player.Current_stamina -= 1;
 Obj_player.Stamina_cooldown_timer = 0
 Obj_player.Idle_timer = 0
+Obj_player.noise_multiple_state = Obj_player.noise_multiple_sprinting;
 }

@@ -47,4 +47,5 @@ if ((Obj_player.Current_stamina < Obj_player.Max_stamina) and (Obj_player.Stamin
 //detects crouch input and switches state to crouched
 if keyboard_lctrl {Player_state = Player_state.crouched}
 	
+Obj_player.noise_multiple_state = Obj_player.noise_multiple_walking;
 }

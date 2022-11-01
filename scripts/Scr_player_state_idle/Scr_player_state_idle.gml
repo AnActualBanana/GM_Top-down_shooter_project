@@ -14,4 +14,6 @@ if keyboard_lctrl {Player_state = Player_state.crouched}
 //stamina regen
 if ((Obj_player.Current_stamina < Obj_player.Max_stamina) ) {
 	Obj_player.Current_stamina += clamp(Obj_player.Regen_stamina_idle, 0, (Obj_player.Max_stamina - Obj_player.Current_stamina))}
+
+Obj_player.noise_multiple_state = Obj_player.noise_multiple_idle;
 }

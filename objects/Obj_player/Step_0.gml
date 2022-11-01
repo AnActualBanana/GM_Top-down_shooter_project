@@ -1,6 +1,6 @@
 //tracks stats
 Current_score = global.enemies_killed_total
-
+total_noise = noise_multiple_state;
 //checks player state, runs appropriate script
 switch (Player_state) {
 	case Player_state.idle: 

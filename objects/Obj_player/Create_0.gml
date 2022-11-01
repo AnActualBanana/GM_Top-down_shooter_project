@@ -38,6 +38,13 @@ Invincibility_frames = 0 //frames where player takes no damage
 Enemies_killed_round = 0 //number of enemies player has killed each round
 setAnimation = 0
 animation_name = 0
+//detection code
+noise_multiple_idle = 0.5;
+noise_multiple_walking = 1.0;
+noise_multiple_crouched = 0.5;
+noise_multiple_sprinting = 1.5;
+noise_multiple_state = 0.0;
+total_noise = 0.0;
 
 //creates states for currently equipped weapon, then sets default weapon state
 enum Player_equipped_weapon {

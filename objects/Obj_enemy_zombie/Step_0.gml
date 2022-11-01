@@ -1,3 +1,6 @@
+detection_bar_x = x - (detection_bar_width/2)
+detection_bar_y = y - 50
+
 switch (Enemy_state) {
 	case Enemy_state.idle: enemy_zombie_idle(self); break;
 	case Enemy_state.wandering: enemy_zombie_wandering(self); break;

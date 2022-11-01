@@ -1,4 +1,3 @@
-
 var i = 0;
 draw_set_font(font_main);
 draw_set_halign(fa_center);
