@@ -1,2 +1,2 @@
-View_width = display_get_width()/2
-View_height = display_get_height()/2
+View_width = window_get_width()
+View_height = window_get_height()
