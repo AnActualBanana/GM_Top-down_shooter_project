@@ -1,3 +1,6 @@
+detection_bar_x = x - (detection_bar_width/2)
+detection_bar_y = y - 50
+
 switch (Enemy_state) {
 	case Enemy_state.idle: enemy_zombie_idle(self); break;
 	case Enemy_state.wandering: enemy_zombie_wandering(self); break;
@@ -30,11 +33,6 @@ if attack_cooldown_timer > 0 and Enemy_state != Enemy_state.attack_cooldown and 
 	alarm[1] = attack_cooldown_timer
 	Enemy_state = Enemy_state.attack_cooldown;
 }
-
-if distance_to_object(Obj_player) < 150 and distance_to_object(Obj_player) > 20 and Enemy_state != Enemy_state.stunned and Enemy_state != Enemy_state.attacking {
-    Enemy_state = Enemy_state.pursuing;
-}
-
 
 if distance_to_object(Obj_player) <= 25 and Enemy_state != Enemy_state.attack_cooldown and Enemy_state != Enemy_state.stunned and Enemy_state != Enemy_state.attacking and canAttack = true {
 	Enemy_state = Enemy_state.attacking;

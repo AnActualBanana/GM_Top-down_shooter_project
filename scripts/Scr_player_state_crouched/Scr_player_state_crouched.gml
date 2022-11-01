@@ -36,10 +36,12 @@ if keyboard_lshift and (keyboard_left or keyboard_right or keyboard_up or keyboa
 //manages player numbers such as stamina and weapon cooldown
 Obj_player.State = 2
 if Obj_player.Stamina_cooldown_timer < Obj_player.Stamina_cooldown_threshold {
-	Obj_player.Stamina_cooldown_timer += 1}
+	Obj_player.Stamina_cooldown_timer += 1
+	}
 	
 //stamina regen, checks for stamina cooldown timer
 if ((Obj_player.Current_stamina < Obj_player.Max_stamina) && Obj_player.Stamina_cooldown_timer = Obj_player.Stamina_cooldown_threshold) 
 	{Obj_player.Current_stamina += clamp(Obj_player.Regen_stamina_crouched, 0, (Obj_player.Max_stamina - Obj_player.Current_stamina))}
 
+Obj_player.noise_multiple_state = Obj_player.noise_multiple_crouched;
 }

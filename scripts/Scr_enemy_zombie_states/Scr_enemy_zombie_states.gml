@@ -1,8 +1,9 @@
 function enemy_zombie_idle(enemy) {
+	enemy_zombie_detection(enemy); //check detection
+	if Enemy_state = Enemy_state.pursuing {exit}; //exit early after pursuing check
 	speed = 0;
 	if relocate_timer = 0 {
 	var relocate_check = random_range(0, 999)
-	show_debug_message(string(relocate_check))
 		if relocate_check >= 667 {
 				relocate_x = (random_range(home_x - 50, home_x + 50));
 				relocate_y = (random_range(home_y - 50, home_y + 50));
@@ -15,7 +16,7 @@ function enemy_zombie_idle(enemy) {
 };
 
 function enemy_zombie_wandering(enemy) {
-	show_debug_message("wandering")
+	enemy_zombie_detection(enemy);
 	direction = point_direction(x, y, relocate_x, relocate_y);
 	speed = 0.5;
 	if point_distance(x, y, relocate_x, relocate_y) <= 1 {
@@ -33,6 +34,9 @@ function enemy_zombie_stunned(enemy) {
 function enemy_zombie_searching(enemy) {};
 
 function enemy_zombie_pursuing(enemy) {
+	if detection_total_threshold > 1000 {detection_total_threshold = 1000}
+	show_debug_message("pursuing")
+	enemy_zombie_detection(self);
 	//animation and direction
 	direction = point_direction(x, y, Obj_player.x, Obj_player.y);
     setActiveAnimation(0)
@@ -43,7 +47,7 @@ function enemy_zombie_pursuing(enemy) {
         speed = 0.75
 		}
 		
-	if distance_to_object(Obj_player) > 150 { //to idle
+	if distance_to_object(Obj_player) > detection_circle_max_distance && detection_total_threshold <= 0 { //to searching
 		home_x = x;
 		home_y = y;
 		Enemy_state = Enemy_state.idle;
@@ -51,15 +55,36 @@ function enemy_zombie_pursuing(enemy) {
 };
 		
 function enemy_zombie_attacking(enemy) {
-	if point_distance(self.x, self.y, Obj_player.x, Obj_player.y) < 50
+	detection_total_threshold = 1000;
+	if distance_to_object(Obj_player) < 30
 		Obj_player.Current_health -= round(random_range(5, 8));
 		canAttack = false;
-		
-	if distance_to_object(Obj_player) > 150 { //to idle
-		home_x = x;
-		home_y = y;
-		Enemy_state = Enemy_state.idle;
-	}
 };
 
 function enemy_zombie_attack_cooldown(enemy) {};
+
+function enemy_zombie_detection(enemy) {
+		show_debug_message(string(detection_total_threshold))
+	if detection_total_threshold >= 1000 && Enemy_state != Enemy_state.stunned && Enemy_state != Enemy_state.pursuing {
+		detection_noise_rate = 0;
+		detection_noise_score = 0;
+		Enemy_state = Enemy_state.pursuing;
+	}
+	else {
+		if point_distance(x, y, Obj_player.x, Obj_player.y) <= detection_circle_max_distance {
+			detection_noise_rate = Obj_player.total_noise * (10 / (point_distance(x, y, Obj_player.x, Obj_player.y) - (0.5 * detection_circle_min_distance)))
+		}
+		
+		else if (point_distance(x, y, Obj_player.x, Obj_player.y) > detection_circle_max_distance) {
+			detection_noise_rate = (-1 * (Obj_player.total_noise * 10 / (point_distance(x, y, Obj_player.x, Obj_player.y) - (0.1 * detection_circle_max_distance))))
+		}
+		detection_noise_score += detection_noise_rate;
+		detection_total_threshold += detection_noise_score;
+	}
+	if detection_total_threshold <= 0 && Enemy_state != Enemy_state.stunned{
+		detection_total_threshold = 0;
+		detection_noise_rate = 0;
+		detection_noise_score = 0;
+		Enemy_state = Enemy_state.idle;
+		}
+};
