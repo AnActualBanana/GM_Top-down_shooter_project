@@ -1,5 +1,5 @@
 //Sets angle to face player, plus random deviation
-image_angle = Obj_gun.image_angle+random_range(-45,45);
+image_angle = Obj_handgun.image_angle+random_range(-45,45);
 image_xscale = 0.2;
 image_yscale = 0.2;
 
@@ -7,7 +7,7 @@ image_yscale = 0.2;
 speed = 10+random_range(3,6);
 
 //Sets direction to eject perpendicular to player, plus random deviation
-direction = Obj_gun.image_angle+random_range(-110,-70);
+direction = Obj_handgun.image_angle+random_range(-110,-70);
 
 //Controls fading
 is_fading = 0;

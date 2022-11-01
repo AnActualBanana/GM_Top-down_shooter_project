@@ -8,6 +8,8 @@ global.highest_score = 0 // high score (persists)
 global.wave = 1; //current wave
 Round_begin = false
 Next_wave = false;
+minSpawn = 2;
+maxSpawn = 4;
 
 enum Game_state {
 in_round,

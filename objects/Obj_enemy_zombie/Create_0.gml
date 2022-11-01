@@ -9,7 +9,7 @@ speed = 0; //starting speed is randomized
 base_speed = speed; // base speed stat from enemy's starting speed so it can be reverted back
 attack_cooldown_timer = 0; // timer to count to 0 from cooldown stat
 setAnimation = 0;
-animation_name = 0;
+animation_name = "Spr_basic_idle";
 animation_cooldown = 0;
 home_x = x; //home coordinate x for wandering
 home_y = y; //home coordinate y for wandering
@@ -17,6 +17,9 @@ relocate_x = x;
 relocate_y = y;
 relocate_timer = 180;
 canAttack = true;
+attacked = false;
+target = Obj_player;
+lastAlive = false;
 
 enum Enemy_state {
 	idle,
@@ -38,15 +41,8 @@ animationData = [
 	["Spr_basic_enemy_stun", 0, 1]
 ];
 
-//Future array for holding drop data, can be 2d, or whatever is needed.
-lootData[0] = [0, 0, 0, 0, 0, 0, 0, 0, 0]
-
-lootData[0] = [0, 0, 0, 0, 0, 0, 0, 0, 0]
-
-projectileData = [
-[],
-[],
-[],
-[],
-[],
+//Can add additional data later if needed.
+lootData = [
+	[Obj_handgun_ammo_drop],
+	[Obj_health_pack_small_drop]
 ];
