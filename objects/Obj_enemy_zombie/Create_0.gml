@@ -34,6 +34,7 @@ enum Enemy_state {
 Enemy_state = Enemy_state.idle;
 
 animationData = [
+    //Enemy Animation Data - [Animation name, attack_cooldown, image_speed, animation cooldown]
     ["Spr_basic_movement", 0, 1],
     ["Spr_basic_idle", 0, 1, 0],
     ["Spr_basic_zombie_attack", 90, 1],

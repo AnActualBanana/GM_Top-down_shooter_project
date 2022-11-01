@@ -1,11 +1,13 @@
-/*switch (Enemy_state) {
+switch (Enemy_state) {
 	case Enemy_state.idle: enemy_zombie_idle(self); break;
-	case Enemy_state.stunned: enemy_zombie_idle(self); break;
-	case Enemy_state.searching: enemy_zombie_idle(self); break;
-	case Enemy_state.pursuing: enemy_zombie_idle(self); break;
-	case Enemy_state.attacking: enemy_zombie_idle(self); break;
 	case Enemy_state.wandering: enemy_zombie_wandering(self); break;
-}*/
+	case Enemy_state.stunned: enemy_zombie_stunned(self); break;
+	case Enemy_state.searching: enemy_zombie_searching(self); break;
+	case Enemy_state.pursuing: enemy_zombie_pursuing(self); break;
+	case Enemy_state.attacking: enemy_zombie_attacking(self); break;
+	case Enemy_state.attack_cooldown: enemy_zombie_attack_cooldown(self); break;
+}
+
 if global.enemies_alive <= 4 and lastAlive = false {
 	lastAlive = true;
 }
@@ -13,12 +15,16 @@ if global.enemies_alive <= 4 and lastAlive = false {
 if lastAlive = true and pursueIgnoreDistanceChecks(){
 	speed = 1.75;
 	Enemy_state = Enemy_state.pursuing
+
 }
 
 if stun_timer > 0 {
 	stun_timer -= 1
 }
 
+if relocate_timer > 0 {
+		relocate_timer --;
+	}
 if attack_cooldown_timer > 0 {
 	attack_cooldown_timer -= 1
 }
