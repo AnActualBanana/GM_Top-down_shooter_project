@@ -4,7 +4,7 @@ draw_set_font(font_main);
 draw_set_halign(fa_center);
 draw_set_color(c_ltgray);
 //displays some version info to the screen
-draw_text(x, (y - 200), "Pre-Alpha Version 0.6.3")
+draw_text(x, (y - 200), "Pre-Alpha Version 0.7.0")
 draw_text(x, (y - 160), string("Animate, state."))
 draw_text(x, (y - 100), string("High Score: " + string(global.highest_score)))
 
