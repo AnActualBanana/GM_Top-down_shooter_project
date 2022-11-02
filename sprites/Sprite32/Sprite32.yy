@@ -68,7 +68,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "TopDownShooter",
-    "path": "TopDownShooter.yyp",
+    "name": "GM_Top-down_shooter_project",
+    "path": "GM_Top-down_shooter_project.yyp",
   },
 }

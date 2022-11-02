@@ -62,3 +62,5 @@ lootData = [
 	[Obj_handgun_ammo_drop],
 	[Obj_health_pack_small_drop]
 ];
+
+show_debug_message("Alive")
