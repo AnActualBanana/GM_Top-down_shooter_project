@@ -1,5 +1,5 @@
-function loot_drop(enemy_instance = instance_id, drop_roll, wave) {
-	switch (enemy_instance.object_index) { //check enemy type
+function loot_drop(enemy = instance_id, drop_roll, wave) {
+	switch (enemy.object_index) { //check enemy type
 		case Obj_enemy_zombie:
 			if (drop_roll >= 0 and drop_roll <= 100) {
 				var item_drop = string(lootData[0][0])
@@ -13,7 +13,7 @@ function loot_drop(enemy_instance = instance_id, drop_roll, wave) {
 		default: item_drop = "none"; break;
 	}
 	if item_drop != "none" {
-		spawn_drop(enemy_instance, item_drop)
+		spawn_drop(enemy, item_drop)
 	} //does drop
 }
 

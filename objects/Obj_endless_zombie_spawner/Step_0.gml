@@ -4,4 +4,4 @@ if Normal_zombie_spawn_timer = Normal_zombie_spawn_time_round && Normal_zombie_s
 	instance_create_layer(next_spawn_x, next_spawn_y,"Instances_1", Obj_enemy_zombie)
 	Normal_zombie_spawned_round += 1
 	Normal_zombie_spawn_timer = 0}
-Normal_zombie_spawn_timer += 1
+Normal_zombie_spawn_timer += 1;
