@@ -13,8 +13,8 @@ all distance checks. It only checks for the stunned, attacking, or attack_cooldo
 function canPursue(){
 	if (attacked = true) {
 		return pursueIgnoreDistanceChecks();
-	} else
-	return pursuingChecks();
+	} /*else
+	return pursuingChecks();*/
 }
 /*Ignores the distance check called by pursuingChecks(), only checks the states,
 the proceeds to grab the location of the player and pursues. Will only stop if the player
@@ -28,8 +28,8 @@ function isStunned(){
 }
 /*Checks for applying the pursuing state. Also handles the distance check here.*/
 function pursuingChecks(){
-	return distance_to_object(target) < 150 and distance_to_object(target) > 20 and Enemy_state != Enemy_state.pursuing and Enemy_state != Enemy_state.stunned and Enemy_state != Enemy_state.attacking and Enemy_state != Enemy_state.attack_cooldown;
-}
+
+	}
 /*Distance check to apply the attacking state.*/
 function withinAttackDistance(){
 	return distance_to_object(target) <= 25;

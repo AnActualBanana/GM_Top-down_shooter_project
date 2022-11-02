@@ -37,16 +37,20 @@ function enemy_zombie_pursuing(enemy) {
 	if detection_total_threshold > 1000 {detection_total_threshold = 1000}
 	show_debug_message("pursuing")
 	enemy_zombie_detection(self);
+	
 	//animation and direction
 	direction = point_direction(x, y, Obj_player.x, Obj_player.y);
     setActiveAnimation(0)
+	
 	//speed setting
-    if sprinting = 1.0 {
+    if sprinting = 1.0 and lastAlive = false {
         speed = 1.75
-    } else { 
+    } else if sprinting != 1.0 and lastAlive = false { 
         speed = 0.75
 		}
-		
+	direction = point_direction(x, y, Obj_player.x, Obj_player.y);
+    setActiveAnimation(0)
+	
 	if distance_to_object(Obj_player) > detection_circle_max_distance && detection_total_threshold <= 0 { //to searching
 		home_x = x;
 		home_y = y;
@@ -56,7 +60,9 @@ function enemy_zombie_pursuing(enemy) {
 		
 function enemy_zombie_attacking(enemy) {
 	detection_total_threshold = 1000;
-	if distance_to_object(Obj_player) < 30
+	setActiveAnimation(2);
+	speed = 0;
+	if withinDamageDistance()
 		Obj_player.Current_health -= round(random_range(5, 8));
 		canAttack = false;
 };

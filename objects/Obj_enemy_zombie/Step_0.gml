@@ -57,28 +57,9 @@ if canPursue() {
 	Enemy_state = Enemy_state.pursuing;
 }
 
-//pursuing state issue movement animations
-if Enemy_state = Enemy_state.pursuing {
-	if sprinting = 1.0 and lastAlive = false {
-		speed = 1.75;
-	} else if sprinting != 1.0 and lastAlive = false {
-		speed = 0.75;
-	}
-    direction = point_direction(x, y, Obj_player.x, Obj_player.y);
-    setActiveAnimation(0)
-}
-
 if canSetAttackingState() {
 	Enemy_state = Enemy_state.attacking;
 	direction = point_direction(x, y, Obj_player.x, Obj_player.y);
-}
-
-if Enemy_state = Enemy_state.attacking {
-	setActiveAnimation(2);
-	speed = 0;
-	if withinDamageDistance()
-		Obj_player.Current_health -= round(random_range(5, 8));
-		canAttack = false;
 }
 
 //kills enemy if hp is 0, then does death process
