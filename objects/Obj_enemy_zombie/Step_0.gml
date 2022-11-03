@@ -11,7 +11,7 @@ switch (Enemy_state) {
 	case Enemy_state.attack_cooldown: enemy_zombie_attack_cooldown(self); break;
 }
 
-if global.enemies_alive <= 4 and lastAlive = false {
+if global.enemies_alive <= 1 and lastAlive = false {
 	lastAlive = true;
 }
 
@@ -51,10 +51,6 @@ if onCooldown() {
 if attacked = true and canPursue() {
 	Enemy_state = Enemy_state.pursuing
 	attacked = false
-}
-
-if canPursue() {
-	Enemy_state = Enemy_state.pursuing;
 }
 
 if canSetAttackingState() {

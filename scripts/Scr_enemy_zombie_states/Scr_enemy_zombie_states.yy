@@ -6,6 +6,6 @@
   "isCompatibility": false,
   "parent": {
     "name": "enemy_zombie",
-    "path": "folders/Scripts/Enemy Scripts/enemy_zombie.yy",
+    "path": "folders/Scripts/Enemy scripts/States/enemy_zombie.yy",
   },
 }

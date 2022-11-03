@@ -164,8 +164,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Scripts","folderPath":"folders/Scripts.yy","order":3,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Animation Scripts","folderPath":"folders/Scripts/Animation Scripts.yy","order":0,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Enemy scripts","folderPath":"folders/Scripts/Enemy scripts.yy","order":2,},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Enemy Scripts","folderPath":"folders/Scripts/Enemy Scripts.yy","order":3,},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"enemy_zombie","folderPath":"folders/Scripts/Enemy Scripts/enemy_zombie.yy","order":0,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"States","folderPath":"folders/Scripts/Enemy scripts/States.yy","order":0,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"enemy_zombie","folderPath":"folders/Scripts/Enemy scripts/States/enemy_zombie.yy","order":0,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Game Control Scripts","folderPath":"folders/Scripts/Game Control Scripts.yy","order":1,},
