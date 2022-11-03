@@ -1,6 +1,3 @@
-detection_bar_x = x - (detection_bar_width/2)
-detection_bar_y = y - 50
-
 switch (Enemy_state) {
 	case Enemy_state.idle: enemy_zombie_idle(self); break;
 	case Enemy_state.wandering: enemy_zombie_wandering(self); break;
@@ -11,15 +8,19 @@ switch (Enemy_state) {
 	case Enemy_state.attack_cooldown: enemy_zombie_attack_cooldown(self); break;
 }
 
-if global.enemies_alive <= 1 and lastAlive = false {
+if global.enemies_alive <= 0 and lastAlive = false {
 	lastAlive = true;
 }
 
 if lastAlive = true and pursueIgnoreDistanceChecks(){
 	speed = 1.75;
+	detection_total_threshold = 1000;
 	Enemy_state = Enemy_state.pursuing
 
 }
+
+detection_bar_x = x - (detection_bar_width/2)
+detection_bar_y = y - 50
 
 if stun_timer > 0 {
 	stun_timer -= 1
@@ -49,6 +50,7 @@ if onCooldown() {
 }
 
 if attacked = true and canPursue() {
+	detection_total_threshold = 1000;
 	Enemy_state = Enemy_state.pursuing
 	attacked = false
 }
@@ -73,3 +75,4 @@ if dead = true {
     instance_destroy(self);
 	show_debug_message("Number of enemies alive after death event called: "+ string(global.enemies_alive))
 }
+show_debug_message(string(detection_total_threshold))

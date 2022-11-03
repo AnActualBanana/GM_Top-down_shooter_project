@@ -54,6 +54,7 @@
     {"id":{"name":"Scr_player_state_inactive","path":"scripts/Scr_player_state_inactive/Scr_player_state_inactive.yy",},"order":2,},
     {"id":{"name":"Scr_player_state_interacting","path":"scripts/Scr_player_state_interacting/Scr_player_state_interacting.yy",},"order":3,},
     {"id":{"name":"Scr_player_state_in_menu","path":"scripts/Scr_player_state_in_menu/Scr_player_state_in_menu.yy",},"order":0,},
+    {"id":{"name":"Spr_detection_line","path":"sprites/Spr_detection_line/Spr_detection_line.yy",},"order":11,},
     {"id":{"name":"Scr_player_state_sprinting","path":"scripts/Scr_player_state_sprinting/Scr_player_state_sprinting.yy",},"order":3,},
     {"id":{"name":"Scr_player_state_walking","path":"scripts/Scr_player_state_walking/Scr_player_state_walking.yy",},"order":4,},
     {"id":{"name":"Scr_quit_game","path":"scripts/Scr_quit_game/Scr_quit_game.yy",},"order":4,},
