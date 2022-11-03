@@ -84,7 +84,7 @@ function enemy_zombie_detection(enemy) {
 			detection_noise_rate = (-1 * (Obj_player.total_noise * 10 / (point_distance(x, y, Obj_player.x, Obj_player.y) - (0.1 * detection_circle_max_distance))))
 		}
 		detection_noise_score += detection_noise_rate;
-		detection_total_threshold += clamp(detection_noise_score, 0, 1000 - detection_total_threshold);
+		detection_total_threshold += clamp(detection_noise_score, -1000 + detection_total_threshold, 1000 - detection_total_threshold);
 	}
 	if detection_total_threshold <= 0 && Enemy_state != Enemy_state.stunned{
 		detection_total_threshold = 0;
