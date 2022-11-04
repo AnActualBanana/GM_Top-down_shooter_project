@@ -1,9 +1,9 @@
 if instance_exists(Obj_player) {
-if (keyboard_check_pressed(ord("R")) && Obj_player.Player_reloading = false && Obj_handgun.Reserve_ammo > 0){
-Player_reloading = true
-Obj_handgun.Reload_timer = Obj_handgun.Reload_speed
-audio_play_sound(Snd_handgun_reload, 1, 0)
-}
+	if (keyboard_r = true && Obj_player.Player_reloading = false && Obj_handgun.Reserve_ammo > 0) {
+		Player_reloading = true
+		Obj_handgun.Reload_timer = Obj_handgun.Reload_speed
+		audio_play_sound(Snd_handgun_reload, 1, 0)
+		}
 //decreases reload timer
 if Obj_handgun.Reload_timer > 0 {Obj_handgun.Reload_timer -= 1};
 //reloads

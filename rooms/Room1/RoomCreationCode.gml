@@ -26,3 +26,4 @@ else
     surface_resize(application_surface, displayWidth, displayHeight);
     window_set_fullscreen(true);
 }
+scr_initialize()

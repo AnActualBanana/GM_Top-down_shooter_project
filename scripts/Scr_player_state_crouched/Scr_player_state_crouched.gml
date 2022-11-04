@@ -1,7 +1,6 @@
-if instance_exists (Obj_player) {
+function player_state_crouched(player) {if instance_exists (Obj_player) {
 //runs script to get inputs and player variables
 Scr_get_inputs();
-Scr_get_player_info();
 
 // checks inputs and moves player with their crouch speed, also detects appropriate inputs for returning to walking or Croucheding states
 if (keyboard_lctrl = 0) {Player_state = Player_state.walking}
@@ -45,3 +44,4 @@ if ((Obj_player.Current_stamina < Obj_player.Max_stamina) && Obj_player.Stamina_
 
 Obj_player.noise_multiple_state = Obj_player.noise_multiple_crouched;
 }
+};

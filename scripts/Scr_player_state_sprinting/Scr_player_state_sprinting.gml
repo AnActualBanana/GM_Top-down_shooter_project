@@ -1,9 +1,8 @@
-//checks if sprint conditions are met before running script
+function player_state_sprinting(player) {//checks if sprint conditions are met before running script
 //gets inputs
 Scr_get_inputs();
 if ((instance_exists (Obj_player)) and (Obj_player.Current_stamina > 0)) {
 //getsplayer info
-Scr_get_player_info();
 
 //Reverts state to Walking when lshift released or when no stamina
 if ((keyboard_lshift or keyboard_left or keyboard_down or keyboard_right or keyboard_up or keyboard_space = false) or (Obj_player.Current_stamina <= 0)) {Player_state = Player_state.walking}
@@ -35,3 +34,4 @@ Obj_player.Stamina_cooldown_timer = 0
 Obj_player.Idle_timer = 0
 Obj_player.noise_multiple_state = Obj_player.noise_multiple_sprinting;
 }
+};

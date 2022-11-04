@@ -1,4 +1,5 @@
-if instance_exists(Obj_game_manager) && instance_exists(Obj_endless_zombie_spawner) {
+function scr_wave_1() {
+	if instance_exists(Obj_game_manager) && instance_exists(Obj_endless_zombie_spawner) && instance_exists(Obj_player) {
 	if Obj_game_manager.Round_begin = false {
 	Obj_game_manager.Round_begin = true
 	Obj_endless_zombie_spawner.Normal_zombie_spawn_time_round = 30
@@ -10,4 +11,5 @@ if (Obj_player.Enemies_killed_round >= Obj_endless_zombie_spawner.Normal_zombie_
 	Obj_game_manager.Round_begin = false;
 	script_execute(Scr_wave_end)
 	}
+}
 }

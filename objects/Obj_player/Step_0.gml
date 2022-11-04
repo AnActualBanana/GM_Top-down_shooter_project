@@ -2,21 +2,22 @@
 Current_score = global.enemies_killed_total
 total_noise = noise_multiple_state;
 //checks player state, runs appropriate script
+Scr_get_inputs();
 switch (Player_state) {
 	case Player_state.idle: 
-		Scr_player_state_idle(); 
+		player_state_idle(self); 
 		break;
 	case Player_state.walking: 
-		Scr_player_state_walking(); 
+		player_state_walking(self); 
 		break;
 	case Player_state.sprinting: 
-		Scr_player_state_sprinting(); 
+		player_state_sprinting(self); 
 		break;
 	case Player_state.crouched: 
-		Scr_player_state_crouched(); 
+		player_state_crouched(self); 
 		break;
 	case Player_state.in_menu: 
-		Scr_player_state_in_menu(); 
+		player_state_in_menu(self); 
 		break;
 }
 //checks for currently equipped weapon, then runs corresponding script

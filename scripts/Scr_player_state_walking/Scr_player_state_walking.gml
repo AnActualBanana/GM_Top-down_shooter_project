@@ -1,7 +1,6 @@
-if instance_exists (Obj_player) {
+function player_state_walking(player) {if instance_exists (Obj_player) {
 //runs scripts to get inputs and player info
 Scr_get_inputs();
-Scr_get_player_info();
 
 //inputs move the player, also checks for collision with solid and stops movement accordingly
 //orthagonal movements
@@ -49,3 +48,4 @@ if keyboard_lctrl {Player_state = Player_state.crouched}
 	
 Obj_player.noise_multiple_state = Obj_player.noise_multiple_walking;
 }
+};

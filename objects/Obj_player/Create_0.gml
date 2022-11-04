@@ -6,7 +6,7 @@ global.enemies_killed_round = 0 //sets the global variable for enemies killed th
 global.wave = 1
 	//player stats
 //some speed stats
-Walk_speed = 2.0 
+Walk_speed = 2.0
 Sprint_speed = 4.0
 Crouched_speed = 1.0
 //some weapon and weapon handling stats
@@ -39,12 +39,32 @@ Enemies_killed_round = 0 //number of enemies player has killed each round
 setAnimation = 0
 animation_name = 0
 //detection code
-noise_multiple_idle = 0.5;
+noise_multiple_idle = 0.1;
 noise_multiple_walking = 1.0;
-noise_multiple_crouched = 0.5;
+noise_multiple_crouched = 0.1;
 noise_multiple_sprinting = 1.5;
 noise_multiple_state = 0.0;
 total_noise = 0.0;
+
+y = room_height / 2
+
+if (player_id == 0) {
+	x = 50;
+}
+else if (player_id == 1) {
+	x = room_width - 50;
+}
+instance_create_layer(x, y, "Instances_1", Obj_main_gui)
+enum Player_state {
+	idle,
+	walking,
+	sprinting,
+	crouched,
+	interacting,
+	in_menu,
+	inactive,
+}
+Player_state = 0
 
 //creates states for currently equipped weapon, then sets default weapon state
 enum Player_equipped_weapon {
@@ -62,7 +82,7 @@ Player_equipped_weapon = Player_equipped_weapon.handgun
 Current_round = 1
 
 //orientation and rotation speed based on mouse position, fixed, no need to change
-rspeed = 18 // Rotation speedThe higher the values, the faster the rotation
+rspeed = 18 //Rotation speed, The higher the values, the faster the rotation
 dir = 0 //Direction, used only for rotation
 image_xscale = 1.5;
 image_yscale = 1.5;
@@ -73,3 +93,25 @@ animationData = [
 	["Spr_chad_idle", 0, 1],
 	["Spr_chad_idle_alt", 0, 1]
 ];
+
+Player_ids = { //stores player instance ids
+Player_1 : undefined,
+Player_2 : undefined,
+Player_3 : undefined,
+Player_4 : undefined,
+};
+
+
+//assigns players to player variables by instance_id
+if player_id == 0 {
+Player_ids.Player_1 = self.id;
+};
+if player_id == 1 {
+Player_ids.Player_2 = self.id;
+};
+if player_id == 2 {
+Player_ids.Player_3 = self.id;
+};
+if player_id == 3 {
+Player_ids.Player_4 = self.id;
+};

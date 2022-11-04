@@ -1,7 +1,6 @@
-if instance_exists (Obj_player) {
+function player_state_idle(player) {if instance_exists (Obj_player) {
 //runs script to get inputs
 Scr_get_inputs();
-Scr_get_player_info();
 
 //gets movement input and switches player to walking state when movement input is detected
 //lshift switches to sprint state if player has stamina, also resets stamina timer
@@ -16,4 +15,5 @@ if ((Obj_player.Current_stamina < Obj_player.Max_stamina) ) {
 	Obj_player.Current_stamina += clamp(Obj_player.Regen_stamina_idle, 0, (Obj_player.Max_stamina - Obj_player.Current_stamina))}
 
 Obj_player.noise_multiple_state = Obj_player.noise_multiple_idle;
+}
 }
