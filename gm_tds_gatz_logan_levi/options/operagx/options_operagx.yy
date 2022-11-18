@@ -1,0 +1,18 @@
+{
+  "resourceType": "GMOperaGXOptions",
+  "resourceVersion": "1.0",
+  "name": "operagx",
+  "option_operagx_version": "0.7.6.4",
+  "option_operagx_next_version": "0.7.6.5",
+  "option_operagx_game_name": "GatZ Pre-Alpha Multiplayer Test",
+  "option_operagx_interpolate_pixels": true,
+  "option_operagx_scale": 0,
+  "option_operagx_texture_page": "2048x2048",
+  "option_operagx_display_cursor": true,
+  "option_operagx_guid": "c1bce35d-b5d3-4e94-abb2-e852ac58dd30",
+  "option_operagx_team_name": "anactualbanana studio",
+  "option_operagx_team_id": "85f63043-4164-4fa6-a38f-106d64d8a9e9",
+  "option_operagx_editUrl": "https://create.gx.games/game/c1bce35d-b5d3-4e94-abb2-e852ac58dd30/edit",
+  "option_operagx_internalShareUrl": "https://gx.games/games/apq9oj/gatz-pre-alpha-multiplayer-test/tracks/4a60232f-531f-4bd1-9911-251964a6571b/",
+  "option_operagx_publicShareUrl": "",
+}

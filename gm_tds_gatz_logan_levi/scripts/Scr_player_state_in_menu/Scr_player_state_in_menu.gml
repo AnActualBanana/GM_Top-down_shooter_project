@@ -1,0 +1,1 @@
+function player_state_in_menu(player) {};
