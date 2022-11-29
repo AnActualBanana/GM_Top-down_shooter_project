@@ -14,7 +14,7 @@ if player_id == 3 {
 Obj_game.Player_ids.Player_4 = [self.id, "alive"]
 };
 
-camera = create_cameras(self.id);
+camera = create_cameras(self);
 
 Player_state = 0 //player state set to default
 State = 0

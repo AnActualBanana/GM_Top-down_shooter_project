@@ -1,5 +1,6 @@
 /// @description Game start
 //multiplayer code
+rollback_use_manual_start();
 rollback_define_input({
 left : ord("A"),
 right : ord("D"),
@@ -19,6 +20,6 @@ Player_ids = { //stores player information [id, alive status]
 	Player_4 : [undefined, "not_created"],
 };
 
-
+number_of_players = 0; // number of players needed for selected game
 number_of_players_alive = 0;
 global.highest_score = 0;
