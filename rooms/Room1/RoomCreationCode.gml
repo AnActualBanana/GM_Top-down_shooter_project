@@ -27,3 +27,4 @@ else
     window_set_fullscreen(true);
 }
 scr_initialize()
+instance_create_layer(room_width/2, room_height/2, "Instances_1", Obj_player);

@@ -1,4 +1,3 @@
-if rollback_game_running == true {//handles wave scripts
 if instance_exists(Obj_game_manager) {
 	switch (Game_state) {
 		case Game_state.not_in_round: 
@@ -31,4 +30,3 @@ if (Shop_open)
 	event_user(0);
 else
 	event_user(1);
-}

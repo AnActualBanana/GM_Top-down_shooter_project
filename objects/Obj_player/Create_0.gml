@@ -1,19 +1,5 @@
 Obj_game.number_of_players_alive += 1;
 
-//assigns players to player variables by instance_id
-if player_id == 0 {
-Obj_game.Player_ids.Player_1 = [self.id, "alive"]
-}
-if player_id == 1 {
-Obj_game.Player_ids.Player_2 = [self.id, "alive"]
-};
-if player_id == 2 {
-Obj_game.Player_ids.Player_3 = [self.id, "alive"]
-};
-if player_id == 3 {
-Obj_game.Player_ids.Player_4 = [self.id, "alive"]
-};
-
 create_cameras(self.id);
 
 Player_state = 0 //player state set to default
@@ -66,13 +52,8 @@ total_noise = 0.0;
 
 y = room_height / 2
 
-if (player_id == 0) {
-	x = 50;
-}
-else if (player_id == 1) {
-	x = room_width - 50;
-}
 instance_create_layer(x, y, "Instances_1", Obj_main_gui)
+
 enum Player_state {
 	idle,
 	walking,
@@ -107,4 +88,3 @@ animationData = [
 	["Spr_chad_idle_alt", 0, 1]
 ];
 handgun = obtain_weapon(Obj_handgun, self); //gives player handgun (for testing) and assigns instance_id to variable
-show_debug_message("player created")

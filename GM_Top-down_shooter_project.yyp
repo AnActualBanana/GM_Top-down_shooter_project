@@ -101,7 +101,6 @@
     {"id":{"name":"Spr_detection_bar","path":"sprites/Spr_detection_bar/Spr_detection_bar.yy",},"order":6,},
     {"id":{"name":"Spr_detection_bar_frame","path":"sprites/Spr_detection_bar_frame/Spr_detection_bar_frame.yy",},"order":7,},
     {"id":{"name":"Spr_door_closed","path":"sprites/Spr_door_closed/Spr_door_closed.yy",},"order":2,},
-    {"id":{"name":"Obj_game","path":"objects/Obj_game/Obj_game.yy",},"order":7,},
     {"id":{"name":"Scr_add_weapon","path":"scripts/Scr_add_weapon/Scr_add_weapon.yy",},"order":5,},
     {"id":{"name":"Spr_door_locked","path":"sprites/Spr_door_locked/Spr_door_locked.yy",},"order":3,},
     {"id":{"name":"Spr_enemy_zombie","path":"sprites/Spr_enemy_zombie/Spr_enemy_zombie.yy",},"order":2,},
@@ -211,6 +210,6 @@
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"Menu Theme.mp4","CopyToMask":-1,"filePath":"datafiles",},
   ],
   "MetaData": {
-    "IDEVersion": "2022.1100.0.245",
+    "IDEVersion": "2022.1100.0.248",
   },
 }

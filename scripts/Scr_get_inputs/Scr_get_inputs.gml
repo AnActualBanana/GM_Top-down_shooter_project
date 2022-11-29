@@ -9,35 +9,29 @@ keyboard_lctrl = false;
 keyboard_space = false;
 keyboard_r = false;
 left_mouse_button = false;
-
-var _input = rollback_get_input(player.player_id);
-if (_input.left) {
-	keyboard_left = true;
 }
-if (_input.right) {
-	keyboard_right = true;
-}
-if (_input.down) {
+if keyboard_check(ord("S")) {
 	keyboard_down = true;
 }
-if (_input.up) {
+if keyboard_check(ord("W")) {
 	keyboard_up = true;
 }
-if (_input.r) {
-	keyboard_r = true;
+if keyboard_check(ord("D")) {
+	keyboard_right = true;
 }
-if (_input.lshift) {
+if keyboard_check(ord("A")) {
+	keyboard_left = true;
+}
+if keyboard_check(vk_lshift) {
 	keyboard_lshift = true;
 }
-if (_input.lctrl) {
+if keyboard_check(vk_lcontrol) {
 	keyboard_lctrl = true;
 }
-if (_input.space) {
+if keyboard_check(vk_space) {
 	keyboard_space = true;
 }
-if (_input.lclick) {
-	left_mouse_button = true;
-}
-//converts inputs into variables
+if keyboard_check(ord("R")) {
+	keyboard_r = true;
 }
 }
