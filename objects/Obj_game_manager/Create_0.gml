@@ -18,3 +18,14 @@ not_in_round,
 Game_state = Game_state.in_round
 
 Shop_open = false;
+
+
+Player_ids = { //stores player information [id, alive status]
+	Player_1 : [undefined, "not_created"],
+	Player_2 : [undefined, "not_created"],
+	Player_3 : [undefined, "not_created"],
+	Player_4 : [undefined, "not_created"],
+};
+
+
+number_of_players_alive = 0;

@@ -1,6 +1,8 @@
-Obj_game.number_of_players_alive += 1;
+Obj_game_manager.number_of_players_alive += 1;
 
 create_cameras(self.id);
+instance_create_layer(x, y, "Instances_1", Obj_main_gui);
+Obj_game_manager.Player_ids.Player_1 = [self.id, "alive"];
 
 Player_state = 0 //player state set to default
 State = 0
@@ -50,9 +52,7 @@ noise_multiple_sprinting = 1.5;
 noise_multiple_state = 0.0;
 total_noise = 0.0;
 
-y = room_height / 2
 
-instance_create_layer(x, y, "Instances_1", Obj_main_gui)
 
 enum Player_state {
 	idle,
