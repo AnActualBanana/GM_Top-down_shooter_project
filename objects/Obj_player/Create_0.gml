@@ -88,3 +88,9 @@ animationData = [
 	["Spr_chad_idle_alt", 0, 1]
 ];
 handgun = obtain_weapon(Obj_handgun, self); //gives player handgun (for testing) and assigns instance_id to variable
+
+inventory = {
+	main_hand : [handgun.id], //equipped item/weapon
+	quick_select : ["","","","","","","","","",""], //quick select 0-9
+	backback : ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""], //full inventory
+};

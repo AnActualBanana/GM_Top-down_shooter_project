@@ -59,7 +59,7 @@ function enemy_zombie_attacking(enemy) {
 	setActiveAnimation(2);
 	speed = 0;
 	if withinDamageDistance()
-		target.Current_health -= round(random_range(5, 8));
+		target.Current_health -= round(random_range(5, 10));
 		canAttack = false;
 };
 

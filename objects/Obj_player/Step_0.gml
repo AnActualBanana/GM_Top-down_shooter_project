@@ -58,18 +58,6 @@ if Dead = true { //death process
 	global.wave = 0;
 	room_goto(0);
 	instance_destroy(self);
-	if player_id == 0 {
-	Obj_game.Player_ids.Player_1 = [self.id, "dead"]
-	};
-	if player_id == 1 {
-	Obj_game.Player_ids.Player_2 = [self.id, "dead"]
-	};
-	if player_id == 2 {
-	Obj_game.Player_ids.Player_3 = [self.id, "dead"]
-	};
-	if player_id == 3 {
-	Obj_game.Player_ids.Player_4 = [self.id, "dead"]
-	};
-
-	Obj_game.number_of_players_alive -= 1;
+	Obj_game_manager.Player_ids.Player_1 = [self.id, "dead"];
+	Obj_game_manager.number_of_players_alive -= 1;
 	};

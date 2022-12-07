@@ -4,8 +4,8 @@
 camera_set_view_size(view, View_width, View_height)
 
 if(instance_exists(Obj_player)) { //camera follows player but not outside room
-var _x = clamp(Player.x-View_width/2, 0, room_width-View_width);
-var _y = clamp(Player.y-View_height/2, 0, room_height-View_height);
+var _x = clamp(Obj_player.x-View_width/2, 0, room_width-View_width);
+var _y = clamp(Obj_player.y-View_height/2, 0, room_height-View_height);
 var _cur_x = camera_get_view_x(view);
 var _cur_y = camera_get_view_y(view);
 
