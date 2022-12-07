@@ -8,7 +8,7 @@ var _text = Text;
 var _script = Script;
 
 // Create button
-var _button = instance_create_layer(_x, _y, "Instances", Obj_button);
+var _button = instance_create_layer(_x, _y, "Instances_1", Obj_button);
 
 // Set values
 with (_button) {
