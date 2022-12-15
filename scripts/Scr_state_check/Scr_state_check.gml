@@ -32,9 +32,9 @@ function pursuingChecks(){
 	}
 /*Distance check to apply the attacking state.*/
 function withinAttackDistance(){
-	return distance_to_object(target) <= 25;
+	return distance_to_object(target) <= 20;
 }
 /*Distance check to apply the damage too the target*/
 function withinDamageDistance(){
-	return point_distance(self.x, self.y, target.x, target.y) < 60
+	return distance_to_object(target) <= 30;
 }

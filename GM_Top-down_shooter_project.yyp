@@ -46,6 +46,7 @@
     {"id":{"name":"Scr_initialize","path":"scripts/Scr_initialize/Scr_initialize.yy",},"order":2,},
     {"id":{"name":"Scr_loot_global","path":"scripts/Scr_loot_global/Scr_loot_global.yy",},"order":1,},
     {"id":{"name":"scr_move","path":"scripts/scr_move/scr_move.yy",},"order":0,},
+    {"id":{"name":"Obj_handgun_drop","path":"objects/Obj_handgun_drop/Obj_handgun_drop.yy",},"order":0,},
     {"id":{"name":"Scr_next_wave_button","path":"scripts/Scr_next_wave_button/Scr_next_wave_button.yy",},"order":2,},
     {"id":{"name":"Scr_on_click","path":"scripts/Scr_on_click/Scr_on_click.yy",},"order":3,},
     {"id":{"name":"Scr_player_state_aiming","path":"scripts/Scr_player_state_aiming/Scr_player_state_aiming.yy",},"order":0,},
@@ -136,9 +137,9 @@
     {"id":{"name":"Tile_set_original","path":"tilesets/Tile_set_original/Tile_set_original.yy",},"order":2,},
   ],
   "Options": [
+    {"name":"Windows","path":"options/windows/options_windows.yy",},
     {"name":"operagx","path":"options/operagx/options_operagx.yy",},
     {"name":"Main","path":"options/main/options_main.yy",},
-    {"name":"Windows","path":"options/windows/options_windows.yy",},
   ],
   "defaultScriptType": 1,
   "isEcma": false,
@@ -210,6 +211,6 @@
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"Menu Theme.mp4","CopyToMask":-1,"filePath":"datafiles",},
   ],
   "MetaData": {
-    "IDEVersion": "2022.1100.0.248",
+    "IDEVersion": "2023.100.0.252",
   },
 }

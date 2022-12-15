@@ -34,4 +34,10 @@ if keyboard_check(vk_space) {
 if keyboard_check(ord("R")) {
 	keyboard_r = true;
 }
+if mouse_check_button_pressed(mb_left) {
+	left_mouse_button = true;
+}
+else {
+	left_mouse_button = false;
+}
 }

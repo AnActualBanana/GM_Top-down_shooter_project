@@ -1,0 +1,1 @@
+pickup_radius = 50; // distance from which item can be picked up.

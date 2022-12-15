@@ -3,6 +3,7 @@ Current_score = global.enemies_killed_total
 total_noise = noise_multiple_state;
 //checks player state, runs appropriate script
 get_inputs(self);
+
 switch (Player_state) {
 	case Player_state.idle: 
 		player_state_idle(self); 

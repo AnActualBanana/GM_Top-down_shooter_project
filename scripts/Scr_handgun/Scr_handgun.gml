@@ -50,7 +50,7 @@ function Scr_handgun(player, handgun) { //which player and handgun object to use
 	}
 //shooting
 	//checks for weapon cooldown and if weapon has ammo
-	if (Obj_player.Weapon_cooldown = 0 && mouse_check_button_pressed(mb_left) && handgun.Current_ammo > 0 && Obj_player.Player_reloading = false) {
+	if (Obj_player.Weapon_cooldown = 0 && left_mouse_button && handgun.Current_ammo > 0 && Obj_player.Player_reloading = false) {
 		Obj_player.Weapon_cooldown = Obj_player.Cooldown_value + handgun.Rof_cooldown;
 		dir = point_direction(x, y, mouse_x, mouse_y);
 		var gun_x = x + lengthdir_x(0, dir)
@@ -111,8 +111,10 @@ function Scr_handgun(player, handgun) { //which player and handgun object to use
 	if crit_roll >= handgun.Critical_threshold {
 		crit = true; var Critical_multiplier = handgun.Critical_multiplier
 	};
-	else {Critical_multiplier = 1};
-	var dmg = (handgun.Damage * Critical_multiplier);
+	else {
+		Critical_multiplier = 1
+	};
+	var dmg = round(random_range(handgun.min_hit, handgun.max_hit)) * Critical_multiplier;
 
 //stun check
 	var stun = false;

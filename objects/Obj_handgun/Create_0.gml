@@ -1,11 +1,11 @@
-//weapon stats
-//minimum and maximum hit range
-//Player = undefined; //assigned player
 
+pickup_radius = 50; //range to pick up item
+//weapon stats
+
+//minimum and maximum hit range
 min_hit = 6
 max_hit = 12
 Rof_cooldown = 20 //weapon cooldown before next shot is fired, in frames (fire rate)
-Damage = round(random_range(min_hit, max_hit)) // damage, random range from min and max hit
 Mag_size = 10 //number of rounds magazine can hold
 Current_ammo = 10 //number of rounds currently in magazine
 Reserve_ammo = 100

@@ -1,0 +1,1 @@
+show_debug_message(string(closest_item(Obj_player)))

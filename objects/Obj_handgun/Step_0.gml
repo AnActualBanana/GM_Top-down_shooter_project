@@ -30,4 +30,4 @@ if Player.Player_state = Player_state.sprinting //sprinting
 
 //constantly adjusted accuracy based on current effective recoil, will be further modified by player state script
 Final_accuracy = ((Accuracy * Accuracy_modifier_state) + Recoil_effective)
-}
+};

@@ -12,9 +12,9 @@ global.enemies_killed_round = 0 //sets the global variable for enemies killed th
 global.wave = 1
 	//player stats
 //some speed stats
-Walk_speed = 2.0
-Sprint_speed = 4.0
-Crouched_speed = 1.0
+Walk_speed = 2.5
+Sprint_speed = 5.0
+Crouched_speed = 1.25
 //some weapon and weapon handling stats
 Accuracy_modifier_idle = 1.0 //modifier to weapon accuracy when idle (multiply)
 Accuracy_modifier_crouched = 0.95 //modifier to weapon accuracy when crouched (multiply)
@@ -87,10 +87,36 @@ animationData = [
 	["Spr_chad_idle", 0, 1],
 	["Spr_chad_idle_alt", 0, 1]
 ];
-handgun = obtain_weapon(Obj_handgun, self); //gives player handgun (for testing) and assigns instance_id to variable
 
+handgun = obtain_weapon(Obj_handgun, self)
 inventory = {
-	main_hand : [handgun.id], //equipped item/weapon
-	quick_select : ["","","","","","","","","",""], //quick select 0-9
-	backback : ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""], //full inventory
+	main_hand : [handgun.id, 0], //equipped item/weapon [item id, quantity]
+
+	quick_select : [ //quick select 0-9 [item id, quantity]
+					["", 0], //1
+					["", 0], //2
+					["", 0], //3
+					["", 0], //4 
+					["", 0], //5
+					["", 0], //6
+					["", 0], //7
+					["", 0], //8
+					["", 0], //9
+					["", 0], //10 (0 key)
+					], 
+
+	quick_select_current_position : -1, //current quick select slot selected
+
+	backback : [
+				["", 0], //1
+				["", 0], //2
+				["", 0], //3
+				["", 0], //4 
+				["", 0], //5
+				["", 0], //6
+				["", 0], //7
+				["", 0], //8
+				["", 0], //9
+				["", 0], //10, //spare items in backpack
+				],
 };
