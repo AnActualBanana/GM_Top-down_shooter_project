@@ -50,7 +50,7 @@ function Scr_handgun(player, handgun) { //which player and handgun object to use
 	}
 //shooting
 	//checks for weapon cooldown and if weapon has ammo
-	if (Obj_player.Weapon_cooldown = 0 && left_mouse_button && handgun.Current_ammo > 0 && Obj_player.Player_reloading = false) {
+	if (Obj_player.Weapon_cooldown = 0 && (handgun.Current_ammo > 0 || (handgun.Current_ammo <= 0 && handgun.Reserve_ammo <= 0)) && left_mouse_button && Obj_player.Player_reloading = false) {
 		Obj_player.Weapon_cooldown = Obj_player.Cooldown_value + handgun.Rof_cooldown;
 		dir = point_direction(x, y, mouse_x, mouse_y);
 		var gun_x = x + lengthdir_x(0, dir)
@@ -62,26 +62,26 @@ function Scr_handgun(player, handgun) { //which player and handgun object to use
 		var contact_y = aimed_y
 		var percent_start = 0;
 		var percent_end = 1;
-	var distance_x = aimed_x - gun_x
-	var distance_y = aimed_y - gun_y
-	var iterations = ceil(log2(point_distance(gun_x, gun_y, aimed_x, aimed_y)))
-	repeat (iterations) {
-		var middle_way =  (percent_end - percent_start) * 0.5 + percent_start
-		var end_x = distance_x * middle_way + gun_x
-		var end_y = distance_y * middle_way + gun_y
-		var start_x = distance_x * percent_start + gun_x
-		var start_y = distance_y * percent_start + gun_y
-		var found = collision_line(start_x, start_y, end_x, end_y, Obj_all_enemies, true, true)
-		if (found == noone) {
-			percent_start = middle_way;
-		};
-		else {
-			target = found
-			contact_x = end_x
-			contact_y = end_y
-			percent_end = middle_way
-		}
-	} 
+		var distance_x = aimed_x - gun_x
+		var distance_y = aimed_y - gun_y
+		var iterations = ceil(log2(point_distance(gun_x, gun_y, aimed_x, aimed_y)))
+		repeat (iterations) {
+			var middle_way =  (percent_end - percent_start) * 0.5 + percent_start
+			var end_x = distance_x * middle_way + gun_x
+			var end_y = distance_y * middle_way + gun_y
+			var start_x = distance_x * percent_start + gun_x
+			var start_y = distance_y * percent_start + gun_y
+			var found = collision_line(start_x, start_y, end_x, end_y, Obj_all_enemies, true, true)
+			if (found == noone) {
+				percent_start = middle_way;
+			};
+			else {
+				target = found
+				contact_x = end_x
+				contact_y = end_y
+				percent_end = middle_way
+			}
+		} 
 //creates muzzle flash and bullet casing objects, sets casing object to appropriate image
 	instance_create_layer(handgun.x, handgun.y, "Instances_1", Obj_muzzle_flare);
 	with instance_create_layer(handgun.x, handgun.y, "gun_front", Obj_bullet_casing) {

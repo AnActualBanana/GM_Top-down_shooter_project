@@ -6,8 +6,6 @@ if instance_exists(Obj_game_manager) {
 			instance_destroy(Obj_all_enemies);
 			with (Obj_player) {Enemies_killed_round = 0}; break;
 		case Game_state.in_round: {switch (global.wave) { // runs appropriate wave script
-			case 1: scr_wave_1(); break;
-			case 2: script_execute(Scr_wave_2); break;
 			default: script_execute(Scr_wave_random_progressive); break;
 			} break;
 		}
