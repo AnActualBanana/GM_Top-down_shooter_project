@@ -8,7 +8,7 @@ switch (Enemy_state) {
 	case Enemy_state.attack_cooldown: enemy_zombie_attack_cooldown(self); break;
 }
 
-if global.enemies_alive <= 0 and lastAlive = false {
+if global.enemies_alive <= Obj_endless_zombie_spawner.Normal_zombie_spawn_count_round/2 and lastAlive = false {
 	lastAlive = true;
 }
 
